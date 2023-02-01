@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <main class="bg-white min-h-screen w-full">
+  <main class="bg-white min-h-screen w-full overflow-hidden">
       <!-- <RouterLink to="/">Home</RouterLink> -->
       <!-- <RouterLink to="/about">About</RouterLink> -->
     <RouterView />

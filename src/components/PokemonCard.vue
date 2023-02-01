@@ -34,11 +34,11 @@ export default {
 
 		<div class="information absolute rounded-lg bg-slate-700 w-full h-full -mt-6 opacity-95 px-4 py-6">
 			<div class="flex flex-col w-full items-center justify-center">
-				<div class="flex ">
+				<div class="flex flex-col justify-center items-center sm:items-start sm:justify-start sm:flex-row">
 					<span class="font-sans text-white font-light">Height:</span>
 					<span class="font-sans text-white font-medium  ml-2">{{ (pokemon!.height / 10).toFixed(2) }}m</span>
 				</div>
-				<div class="flex">
+				<div class="flex flex-col justify-center items-center sm:items-start sm:justify-start sm:flex-row">
 					<span class="font-sans text-white font-light">Weight:</span>
 					<span class="font-sans text-white font-medium ml-2">{{ (pokemon!.weight / 10).toFixed(2) }}kg</span>
 				</div>

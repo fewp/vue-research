@@ -99,13 +99,13 @@ const changeLoadAmount = (event: any) => {
 <template>
 	<div class="animated-background">
 		<div class="flex items-center flex-col container mx-auto justify-center py-16 ">
-			<div class="flex items-center flex-col w-1/2 justify-center pt-16">
+			<div class="flex items-center flex-col w-full lg:w-1/2 justify-center pt-16 px-4">
 				<div class="flex items-center justify-center gap-2 mb-8 flex-wrap select-none">
 					<PokemonByTypesFilter :types="pokemonTypes" v-if="!isLoading"/>
 					<span class="h-9 w-24 rounded-full loading" v-for="n in 5" v-else-if="isLoading"></span>
 				</div>
 
-				<h1 class="text-white font-sans text-4xl font-semibold mt-8">Welcome to the <span class="text-orange-400 font-bold">Pokedex</span>!</h1>
+				<h1 class="text-white font-sans text-4xl font-semibold mt-8 text-center">Welcome to the <span class="text-orange-400 font-bold">Pokedex</span>!</h1>
 				<p class="text-slate-400 font-sans text-xl font-light my-2 text-center">
 					Click on a card to reveal more information about the pokemon! You can also search by name or filter by one of the
 					<span class="text-slate-200 font-medium">
@@ -116,13 +116,13 @@ const changeLoadAmount = (event: any) => {
 			</div>
 		</div>
 	</div>
-	<div class="flex items-start flex-col text-lg container mx-auto justify-center">
+	<div class="flex items-start flex-col text-lg container mx-auto justify-center px-4">
 		<div v-if="!isLoading" class="flex w-full flex-col">
-			<div class="w-full flex justify-between items-center py-8" >
+			<div class="w-full flex flex-col lg:flex-row justify-between items-center py-8" >
 				<p class="text-slate-900 font-sans">
 					Showing {{ pokemons.length }} pokemon 
 				</p>
-				<div class="flex justify-between items-center space-x-2">
+				<div class="flex justify-center lg:justify-between items-center gap-2 mt-4 lg:mt-0 flex-wrap">
 					<button 
 						v-for="value in loadValues"
 						class="px-6 py-3 rounded-full font-sans text-sm  font-medium hover:bg-slate-600 hover:text-white" 
@@ -136,19 +136,19 @@ const changeLoadAmount = (event: any) => {
 					</button>
 				</div>
 			</div>
-			<div class="w-full grid grid-cols-6 gap-4 pb-8">
+			<div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 pb-8">
 				<PokemonCard  v-for="pokemon in pokemons" :pokemon="pokemon" />
 			</div>
 		</div>
 		<div v-else-if="isLoading" class="flex w-full flex-col">
 			<div class="w-full flex justify-between items-center py-8">
-				<span class="h-12 w-1/3 rounded-full loading"></span>
+				<span class="h-12 w-1/3 rounded-full loading hidden lg:flex"></span>
 
 				<div class="flex justify-between items-center space-x-2">
 					<span class="h-12 w-32 rounded-full loading" v-for="n in 4"></span>
 				</div>
 			</div>
-			<div class="w-full grid grid-cols-6 gap-4 pb-8">
+			<div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 pb-8">
 				<SkeletonCard v-for="n in 12"/>
 			</div>
 		</div>
