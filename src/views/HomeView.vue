@@ -99,7 +99,7 @@ const changeLoadAmount = (event: any) => {
 <template>
 	<div class="animated-background">
 		<div class="flex items-center flex-col container mx-auto justify-center py-16 ">
-			<div class="flex items-center flex-col w-full lg:w-1/2 justify-center pt-16 px-4">
+			<div class="flex items-center flex-col w-full lg:w-1/2 justify-center lg:pt-16 px-4">
 				<div class="flex items-center justify-center gap-2 mb-8 flex-wrap select-none">
 					<PokemonByTypesFilter :types="pokemonTypes" v-if="!isLoading"/>
 					<span class="h-9 w-24 rounded-full loading" v-for="n in 5" v-else-if="isLoading"></span>
